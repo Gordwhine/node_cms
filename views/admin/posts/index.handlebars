@@ -1,0 +1,30 @@
+<h1>All Posts</h1>
+
+{{> home/form-msgs}}
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Photo</th>
+			<th>Title</th>
+			<th>Status</th>
+			<th>Category</th>
+			<th>Allow Comments</th>
+			<th>Date</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each posts}}
+		<tr>
+			<td><img src="/uploads/{{file}}" alt="" height="50px" width="70px"></td>
+			<td>{{title}}</td>
+			<td>{{status}}</td>
+			<td>{{category.name}}</td>
+			<td>{{allowComments}}</td>
+			<td>{{generateDate date 'MMMM Do YYYY'}}</td>
+			<td><a href="/post/{{slug}}">View Post</a></td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>

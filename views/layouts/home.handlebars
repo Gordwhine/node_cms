@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>NODE - CMS</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for the page -->
+    <link href="/css/blog-home.css" rel="stylesheet">
+    <!-- Custom styles for the post single -->
+    <link href="/css/blog-post.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation | there should be no space btw the curly brace & the greater sign symbol-->
+    {{> home/home-nav }}
+
+    <!-- Page Content -->
+    <div class="container">
+
+      {{#if errors}}
+        {{#each errors}}
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                      {{message}}
+                  </div>
+              </div>
+          </div>
+        {{/each}}
+      {{/if}}
+
+      <!-- notification message -->
+      {{> home/form-msgs}}
+      <!-- /.End notification message -->
+
+    {{{ body }}}
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    {{> home/footer }}
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>
